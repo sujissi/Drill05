@@ -31,7 +31,12 @@ def set_arrow_point():
         is_collision = False
     pass
 
+
 def follow_arrow():
+    global x, y, rx, ry
+    t = 0.3
+    x = (1 - t) * x + t * rx
+    y = (1 - t) * y + t * ry
     pass
 
 
