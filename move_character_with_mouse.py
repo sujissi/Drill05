@@ -32,6 +32,7 @@ def set_arrow_point():
         is_collision = False
     pass
 
+
 def follow_arrow():
     global x, y, rx, ry
     t = 0.1
@@ -39,14 +40,22 @@ def follow_arrow():
     y = (1 - t) * y + t * ry
     pass
 
+
 def check_collision():
     global x, y, rx, ry, is_collision
     if -20 < x - rx < 20 and -20 < y - ry < 20:
         is_collision = True
     pass
 
+
 def set_img_dir():
+    global x, rx, direction
+    if x < rx:
+        direction = 1
+    else:
+        direction = 0
     pass
+
 
 running = True
 is_collision = True
