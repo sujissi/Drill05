@@ -25,12 +25,12 @@ def handle_events():
 def set_arrow_point():
     global rx, ry, is_collision
     margin = 100
+    check_collision()
     if is_collision:
         rx = random.randint(0 + margin, TUK_WIDTH - margin)
         ry = random.randint(0 + margin, TUK_HEIGHT - margin)
         is_collision = False
     pass
-
 
 def follow_arrow():
     global x, y, rx, ry
@@ -39,13 +39,14 @@ def follow_arrow():
     y = (1 - t) * y + t * ry
     pass
 
-
 def check_collision():
     global x, y, rx, ry, is_collision
     if -20 < x - rx < 20 and -20 < y - ry < 20:
         is_collision = True
     pass
 
+def set_img_dir():
+    pass
 
 running = True
 is_collision = True
@@ -53,16 +54,17 @@ x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
 rx, ry = x, y
 
 frame = 0
+direction = 1
 hide_cursor()
 
 while running:
     clear_canvas()
     set_arrow_point()
+    set_img_dir()
     follow_arrow()
-    check_collision()
 
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
+    character.clip_draw(frame * 100, 100 * direction, 100, 100, x, y)
     arrow.draw(rx, ry)
 
     update_canvas()
