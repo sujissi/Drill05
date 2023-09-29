@@ -31,6 +31,9 @@ def set_arrow_point():
         is_collision = False
     pass
 
+def follow_arrow():
+    pass
+
 
 running = True
 is_collision = True
@@ -43,6 +46,7 @@ hide_cursor()
 while running:
     clear_canvas()
     set_arrow_point()
+    follow_arrow()
 
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
