@@ -39,6 +39,9 @@ def follow_arrow():
     y = (1 - t) * y + t * ry
     pass
 
+def check_collision():
+    pass
+
 
 running = True
 is_collision = True
@@ -52,7 +55,7 @@ while running:
     clear_canvas()
     set_arrow_point()
     follow_arrow()
-
+    check_collision()
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
     arrow.draw(rx, ry)
