@@ -34,7 +34,7 @@ def set_arrow_point():
 
 def follow_arrow():
     global x, y, rx, ry
-    t = 0.3
+    t = 0.1
     x = (1 - t) * x + t * rx
     y = (1 - t) * y + t * ry
     pass
@@ -42,7 +42,7 @@ def follow_arrow():
 
 def check_collision():
     global x, y, rx, ry, is_collision
-    if -10 < x - rx < 10 and -10 < y - ry < 10:
+    if -20 < x - rx < 20 and -20 < y - ry < 20:
         is_collision = True
     pass
 
